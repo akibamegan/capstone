@@ -5,7 +5,7 @@ Brain Break is a browser extension that slowly degrades user experience and uses
 
 This repository contains code for both the extension and the web application. Directions to install the Chrome extension are below.
 
-1. Download this repository
+1. Download this repository (The extension is the folder called brainbreak)
 2. In Chrome, navigate to chrome://extensions/
 3. Enable Developer Mode by clicking the toggle switch next to Developer mode. Click the LOAD UNPACKED button and select the extension directory.
 
