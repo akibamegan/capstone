@@ -1,0 +1,70 @@
+{	// Chrome extension configurations file
+
+	"name": "Productive Pause",
+	"version": "0.1",
+	"description": "Sit too long at your computer? Browsing the web for too long? Not anymore! DeskBound Refresh will help you take breaks more often.",
+	"manifest_version": 2,
+
+	"web_accessible_resources": [
+		"images/*.gif",
+		"images/*.jpg",
+		"images/*.jpeg",
+		"images/*.png"
+	],
+
+	// content scripts manipulates the page content on the browser
+	// an extension can have multiple content scripts
+	"content_scripts": [
+		{
+			"matches": [ // works on all urls
+				"<all_urls>"
+			],
+			"exclude_matches": [
+				"https://capstone-meak.herokuapp.com/*"
+			],
+			// javascript runs only after the page is loaded
+			"js": [
+				"p5.js",
+				"p5.dom.js",
+				"content.js"
+			]
+		},
+		{
+			"matches": [
+				"https://capstone-meak.herokuapp.com/host"
+			],
+			"js": [
+				"host.js"
+			]
+		}
+	],
+
+	// runs as soon as the page is launched, can listen for browser actions
+	"background": {
+		"scripts": [
+			"background.js"]
+	},
+
+	"browser_action": { 
+		"default_icon": "icon.png",
+		"default_popup": "sedentary.html"
+	},
+
+	"permissions": [
+		"notifications",
+		"tabs",
+		"idle"
+	],
+
+	"icons": {
+		"128": "icon.png"
+	}
+}
+
+
+
+// regular expressions find and replace 
+// ^(.*?)$
+// '$1',
+
+

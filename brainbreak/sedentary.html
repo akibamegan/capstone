@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+	<title>Brain Break</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Brain Break: Task List</h1>
+		<p>Use this task list to make note of quick things you can do to take short breaks and do something active to get away from your computer!</p>
+		<p>It is recommended to take a short break every 30 minutes. Standing for at least 8 minutes, and moving around for at least 2 minutes. Try to move around as often as you can! If you get blocked from using your browser, click the button at the bottom to redeem yourself.</p>
+		<h3>Add Item</h3>
+		<p>
+			<input id="new-task" type="text"><button>Add</button>
+		</p>
+
+		<h3>To Do List</h3>
+		<ul id="incomplete-tasks">
+			<li><input type="checkbox"><label>Go on a walk!</label><input type="text"><button class="delete">Delete</button></li>
+			<li><input type="checkbox"><label>Go get groceries</label><input type="text" value="Go Shopping"><button class="delete">Delete</button></li>
+		</ul>
+
+		<ul id="completed-tasks">
+			
+		</ul>
+	</div>
+
+	<button id="activeButton">Let's Get Active</button>
+</body>
+<script type="text/javascript" src="popup.js"></script>
+</html>
