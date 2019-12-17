@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Brain Break</title>
+</head>
+<body class="isHost">
+
+	<!-- alert messages (support related/directions-->
+	<p class="WrongDeviceAlert hidden">Please view this page on a desktop! Try this <a href="https://capstone-meak.herokuapp.com">link</a> if you're on your mobile device!</p>
+	
+	<div class="titleArea HostMessage hidden">
+		<h1>BRAIN BREAK</h1>
+		<p>After opening this page up on your desktop, visit https://capstone-meak.herokuapp.com on your mobile device and follow the directions.<br/>Your movement progress will be shown below and your browser will be unlocked when completed!</p>
+	</div>
+
+    <main class="Wrapper">
+    </main>
+
+    <div class="UsersScene isTemplate">
+      <div class="UserContainer">
+        <div class="User">
+			<div class="User-front">
+				<p class="NameText"></p>
+				<p class="progressValue" id="progressTextHost">0</p>
+				<p class="completeMessage" id="progressMessageHost">NOT COMPLETE</p>
+			</div>
+        </div>
+      </div>
+    </div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/host.js"></script>
+</body>
+</html>

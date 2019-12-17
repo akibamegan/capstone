@@ -1,0 +1,284 @@
+  /* elements */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+input{
+  background-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.text {
+  border: solid 1px;
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  background: white;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #c1c8e4;
+  height: 100%;
+  font-family: 'Libre Franklin', sans-serif;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* scene wrapper */
+
+.Wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+body.isHost .Wrapper::after {
+  content: "";
+  flex: auto;
+}
+
+/*other random elements*/
+
+.permissionSection {
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 100px;
+}
+
+.permissionSection img, button, p {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.PermissionButton {
+  font-family: 'Libre Franklin', sans-serif;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background: #5ab9ea;
+  font-size: 16px;
+  padding: 10px 15px;
+  opacity: 1;
+  transition: opacity 1s;
+  margin-top: 5px;
+}
+
+.progressVisual {
+  background: rgb(9,9,121);
+  border-radius: 3px;
+  background: #8860d0;
+}
+
+.titleArea {
+  background: #5AB9EA;
+  text-align: center;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: larger;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.titleArea p {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+/* for each new user/client */
+
+.UsersScene {
+  flex: 1 0 33%;
+}
+
+.UsersScene.isTemplate {
+  display: none;
+}
+
+.UserContainer {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 90%;
+  perspective: 1000px;
+  transform: translate(0) scale(0.8);
+}
+
+.User {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  transform-style: preserve-3d;
+  transform: scale(2.2);
+  transform-origin: center center;
+  transition: transform 1s;
+  border-radius: 20px;
+}
+
+.User.hasName {
+  transform: scale(1.1);
+}
+
+
+.User.hasInited {
+  transition: none;
+}
+
+body.isHost .User {
+  transform: scale(1);
+  transition: none;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.User > * {
+  position: absolute;
+}
+
+.User-front {
+  width: 100%;
+  height: 100%;
+  padding: 250px 100px 100px 100px;
+}
+
+
+/* form for getting user name */
+
+.Name {
+  text-align: center;
+}
+
+.Name-label {
+  display: block;
+  font-size: 8px;
+  margin-bottom: 5px;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.User.hasName .Name-label {
+  opacity: 0;
+}
+
+.Name-input {
+  font-family: 'Libre Franklin', sans-serif
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid #036;
+  color: #036;
+  margin-bottom: 5px;
+  padding: 2px;
+  text-align: center;
+  width: 100%;
+  transition: border-bottom-color 1s;
+}
+
+.User.hasName .Name-input {
+  border-bottom-color: transparent;
+  font-size: 25px;
+}
+
+.Name-input:focus {
+  outline: none;
+}
+
+.Name-button {
+  font-family: 'Libre Franklin', sans-serif;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  background: #5ab9ea;
+  margin-top: 10px;
+  padding: 5px 15px;
+  opacity: 1;
+  transition: opacity 1s;
+  cursor: pointer;
+}
+
+.User.hasName .Name-button {
+  opacity: 0;
+  margin: 0;
+}
+
+.progressVisualClient {
+  opacity: 0;
+}
+
+.progressVisualHost {
+  opacity: 1;
+}
+
+.User.hasName .progressVisualClient {
+  opacity: 1;
+  transition: opacity 1s;
+  margin: 20px;
+  margin-left: 3px;
+}
+
+#progressTextClient {
+  opacity: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#progressTextHost {
+  opacity: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.User.hasName #progressTextClient {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+
+
+/* for host page */
+
+.NameText {
+  font-size: 32px;
+  font-family: 'Libre Franklin', sans-serif;
+}

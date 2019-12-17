@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<title>Brain Break</title>
+</head>
+<body>
+  <!-- title banner thing -->
+  <div class="titleArea">
+    <h1>BRAIN BREAK</h1>
+  </div>
+
+	<!-- button to trigger permissions / permissions messages-->
+  <div class="permissionSection">
+    <img src="../button.svg" width="40%">
+    <p>We need permissions! Give us access before we can proceed!</p>
+	 <button class="PermissionButton">Ask For Permission</button>
+  </div>
+
+  <main class="Wrapper hidden">
+    <div class="UsersScene hidden">
+      <div class="UserContainer">
+        <div class="User">
+          <div class="User-front">
+            <form class="Name">
+              <label class="Name-label" for="name">Enter your unique name below (Match the name you entered on your desktop)</label>
+              <input class="Name-input" type="text" name="name" autocomplete="off" value="" />
+              <button class="Name-button">Go</button>
+            </form>
+            <p class="progressValue" id="progressTextClient">0</p>
+            <p class="completeMessage" id="progressTextClient">NOT COMPLETE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/client.js"></script>
+</body>
+</html>
