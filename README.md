@@ -3,6 +3,8 @@
 
 Brain Break is a browser extension that slowly degrades user experience and uses a companion web application to verifies user movement in order to restore normal functionality.
 
+DEMO VIDEO: https://vimeo.com/379624482
+
 This repository contains code for both the extension and the web application. Directions to install the Chrome extension are below.
 
 1. Download this repository (The extension is the folder called brainbreak)
